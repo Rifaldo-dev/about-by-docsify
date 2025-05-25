@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rifaldo | Link Bio</title>
+
+  <!-- Bootstrap & Docsify CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsify/themes/vue.css"/>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    .dark-mode {
+      background-color: #121212 !important;
+      color: #fff !important;
+    }
+
+    .loading-screen {
+      position: fixed;
+      z-index: 9999;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 100%;
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .spinner-border {
+      width: 3rem;
+      height: 3rem;
+    }
+
+    .container-custom {
+      max-width: 900px;
+      margin: auto;
+      padding: 20px;
+    }
+
+    .navbar-custom {
+      background-color: #007bff;
+    }
+
+    .navbar-custom a {
+      color: white !important;
+      font-weight: bold;
+    }
+
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin-bottom: 10px;
+    }
+
+    .btn-link-custom {
+      display: block;
+      margin: 10px auto;
+      padding: 12px 25px;
+      width: 80%;
+      max-width: 300px;
+      border-radius: 30px;
+      font-weight: bold;
+      color: white;
+      background: #007bff;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .btn-link-custom:hover {
+      background: #0056b3;
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 40px;
+      font-size: 0.9em;
+      color: gray;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loading -->
+  <div class="loading-screen" id="loading">
+    <div class="spinner-border text-primary" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+
+  <!-- Docsify Container -->
+  <div id="app" class="container-custom">
+    <div class="text-center mb-4">
+      <img src="https://avatars.githubusercontent.com/u/000000?v=4" alt="Profile" class="profile-img" />
+      <h2>Rifaldo</h2>
+      <p>👋 Welcome to my link bio and Docsify site!</p>
+      <a href="https://t.me/username" class="btn-link-custom" target="_blank">📬 Telegram</a>
+      <a href="https://github.com/Rifaldo-dev" class="btn-link-custom" target="_blank">💻 GitHub</a>
+    </div>
+  </div>
+
+  <!-- Docsify -->
+  <script>
+    // Loading delay
+    setTimeout(() => {
+      document.getElementById("loading").style.display = "none";
+    }, 1500);
+
+    window.$docsify = {
+      name: '🌐 Rifaldo',
+      repo: 'https://github.com/Rifaldo-dev/Rifaldo-dev',
+      loadSidebar: false,
+      loadNavbar: false,
+      subMaxLevel: 2,
+      coverpage: false,
+      auto2top: false,
+      homepage: 'README.md',
+      search: {
+        noData: {
+          '/': 'No results found'
+        },
+        paths: 'auto',
+        placeholder: {
+          '/': 'Search...'
+        }
+      },
+      plugins: [
+        function (hook) {
+          hook.beforeEach(function (html) {
+            if (document.body.classList.contains('dark-mode')) {
+              html = `
+                <style>
+                  body { background-color: #121212; color: white; }
+                  .container-custom { color: white; }
+                </style>` + html;
+            }
+            return html;
+          });
+        }
+      ]
+    };
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/docsify/lib/plugins/search.min.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,37 @@
+body {
+  background: #f5f5f5;
+  color: #222;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dark-mode {
+  background: #121212 !important;
+  color: #f5f5f5 !important;
+}
+
+.profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid white;
+}
+
+.link-btn {
+  font-size: 18px;
+  transition: all 0.3s;
+}
+
+.link-btn:hover {
+  transform: scale(1.02);
+}
+
+.gif-cat {
+  max-width: 120px;
+  border-radius: 20px;
+}
+
+footer {
+  font-size: 14px;
+  color: gray;
+}

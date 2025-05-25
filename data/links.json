@@ -1,0 +1,17 @@
+[
+  {
+    "title": "My Portfolio",
+    "url": "https://your-portfolio.com",
+    "color": "primary"
+  },
+  {
+    "title": "Instagram",
+    "url": "https://instagram.com/yourname",
+    "color": "danger"
+  },
+  {
+    "title": "Contact Me",
+    "url": "mailto:you@example.com",
+    "color": "success"
+  }
+]
